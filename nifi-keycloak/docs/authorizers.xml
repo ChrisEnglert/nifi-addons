@@ -1,0 +1,28 @@
+<authorizers>
+
+
+    <!--
+        The KeycloakUserGroupProvider will provide users and groups managed by an instance of keycloak
+
+        - ServerUrl: The keycloak server URL
+
+        - Realm: The realm used to access the keycloak API
+
+        - Username: The admin user name used to access the keycloak API
+
+        - Password: The admin user password used to access the keycloak API
+
+        - ClientID: The clientId used to access the keycloak API
+
+    -->
+    <userGroupProvider>
+        <identifier>keycloak-user-group-provider</identifier>
+        <class>org.apache.nifi.authorization.KeycloakUserGroupProvider</class>
+        <property name="ServerUrl">http://localhost:4000/auth</property>
+        <property name="Realm">master</property>
+        <property name="Username"></property>
+        <property name="Password"></property>
+        <property name="ClientID">admin-cli</property>
+    </userGroupProvider>
+
+</authorizers>
