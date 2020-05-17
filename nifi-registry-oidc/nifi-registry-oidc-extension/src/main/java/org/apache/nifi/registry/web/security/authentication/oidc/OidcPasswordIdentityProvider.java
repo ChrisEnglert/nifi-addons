@@ -16,10 +16,7 @@ import com.nimbusds.oauth2.sdk.auth.Secret;
 import com.nimbusds.oauth2.sdk.id.ClientID;
 import com.nimbusds.oauth2.sdk.token.BearerAccessToken;
 import com.nimbusds.oauth2.sdk.util.StringUtils;
-import org.apache.nifi.registry.security.authentication.AuthenticationRequest;
-import org.apache.nifi.registry.security.authentication.AuthenticationResponse;
-import org.apache.nifi.registry.security.authentication.BasicAuthIdentityProvider;
-import org.apache.nifi.registry.security.authentication.IdentityProviderConfigurationContext;
+import org.apache.nifi.registry.security.authentication.*;
 import org.apache.nifi.registry.security.authentication.exception.IdentityAccessException;
 import org.apache.nifi.registry.security.authentication.exception.InvalidCredentialsException;
 import org.apache.nifi.registry.security.exception.SecurityProviderCreationException;
@@ -46,6 +43,21 @@ public class OidcPasswordIdentityProvider extends BasicAuthIdentityProvider {
     private String identityClaim;
     private String usernameClaim;
     private long expiration;
+
+    private static final IdentityProviderUsage usage = new IdentityProviderUsage() {
+        public String getText() {
+            return "Perform ResourceOwnerPasswordCredentialsGrant request with Username and Password";
+        }
+
+        public AuthType getAuthType() {
+            return AuthType.BASIC;
+        }
+    };
+
+    @Override
+    public IdentityProviderUsage getUsageInstructions() {
+        return usage;
+    }
 
     @Override
     public AuthenticationResponse authenticate(AuthenticationRequest authenticationRequest) throws InvalidCredentialsException, IdentityAccessException {
