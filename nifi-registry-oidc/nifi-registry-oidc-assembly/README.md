@@ -58,6 +58,7 @@ nifi.registry.security.needClientAuth=false
     <provider>
         <identifier>oidc-identity-provider</identifier>
         <class>org.apache.nifi.registry.web.security.authentication.oidc.OidcPasswordIdentityProvider</class>
+        <property name="Authentication Expiration">12 hours</property>
         <property name="Token Endpoint">http://localhost:4000/auth/realms/master/protocol/openid-connect/token</property>
         <property name="Client Id">nifi</property>
         <property name="Client Secret">a356d9e5-001e-4844-aac2-be0838052187</property>
