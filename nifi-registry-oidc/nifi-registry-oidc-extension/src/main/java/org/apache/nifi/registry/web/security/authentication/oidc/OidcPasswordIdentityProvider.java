@@ -63,7 +63,7 @@ public class OidcPasswordIdentityProvider extends BasicAuthIdentityProvider {
 
         if (! response.indicatesSuccess()) {
             TokenErrorResponse errorResponse = response.toErrorResponse();
-            throw new InvalidCredentialsException("Failed: " + errorResponse.toString());
+            throw new InvalidCredentialsException(errorResponse.getErrorObject().getDescription());
         }
 
         AccessTokenResponse successResponse = response.toSuccessResponse();
