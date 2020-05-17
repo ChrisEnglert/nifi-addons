@@ -53,23 +53,21 @@ nifi.registry.extension.dir.keycloak=./ext/keycloak/lib
 
 ### authorizers.xml
 
-Uncomment the extensionBundlePersistenceProvider for S3:
+Example config UserGroupProvider
 ```
-<!--
     <userGroupProvider>
         <identifier>keycloak-user-group-provider</identifier>
         <class>org.apache.nifi.registry.keycloak.authorization.KeycloakUserGroupProvider</class>
         <property name="ServerUrl">http://localhost:4000/auth</property>
-	    <property name="Realm">master</property>
-	    <property name="Username">admin</property>
+        <property name="Realm">master</property>
+        <property name="Username">admin</property>
     	<property name="Password">admin</property>
-	    <property name="ClientID">admin-cli</property>
+        <property name="ClientID">admin-cli</property>
     </userGroupProvider>
 
     <accessPolicyProvider>
         <property name="User Group Provider">keycloak-user-group-provider</property>
     ...
--->
 ```
 
 
