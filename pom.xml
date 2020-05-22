@@ -4,10 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <groupId>org.apache.nifi</groupId>
     <artifactId>NiFi-Addons</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
 
     <modules>
         <module>nifi-keycloak</module>
+        <module>nifi-tusio</module>
 
         <module>nifi-registry-oidc</module>
         <module>nifi-registry-keycloak</module>
