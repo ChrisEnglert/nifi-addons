@@ -8,6 +8,8 @@
     <artifactId>NiFi-Addons</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
+    <packaging>pom</packaging>
+
     <modules>
         <module>nifi-keycloak</module>
         <module>nifi-tusio</module>
