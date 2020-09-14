@@ -13,8 +13,8 @@
     <packaging>pom</packaging>
 
     <properties>
-        <keycloak.version>10.0.1</keycloak.version>
-        <nifi-registry.version>1.0.0-SNAPSHOT</nifi-registry.version>
+        <keycloak.version>11.0.2</keycloak.version>
+        <nifi-registry.version>0.7.0</nifi-registry.version>
     </properties>
 
     <modules>
