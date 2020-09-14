@@ -21,10 +21,6 @@ Can load NiFi User and Groups from KeyCloak
 #### UserGroupProvider
 Can load NiFi-Registry User and Groups from KeyCloak
 
-Currently not working due to classloader issue.
-Pending https://issues.apache.org/jira/browse/NIFIREG-394
-Can solve https://issues.apache.org/jira/browse/NIFIREG-147
-
 
 
 ## NiFi-Registry OIDC [nifi-registry-oidc](https://github.com/ChrisEnglert/nifi-addons/tree/master/nifi-registry-oidc)
