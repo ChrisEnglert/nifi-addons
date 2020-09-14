@@ -26,8 +26,8 @@
     <version>0.0.1-SNAPSHOT</version>
 
     <properties>
-        <keycloak.version>10.0.0</keycloak.version>
-        <nifi.version>1.11.4</nifi.version>
+        <keycloak.version>11.0.2</keycloak.version>
+        <nifi.version>1.12.0</nifi.version>
     </properties>
 
     <modules>
