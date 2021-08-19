@@ -17,7 +17,7 @@
     <parent>
         <groupId>org.apache.nifi</groupId>
         <artifactId>nifi-keycloak-bundle</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>1.14.0</version>
     </parent>
     <artifactId>nifi-keycloak-nar</artifactId>
     <packaging>nar</packaging>

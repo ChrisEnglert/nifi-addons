@@ -17,13 +17,13 @@
     <parent>
         <groupId>org.apache.nifi</groupId>
         <artifactId>nifi-nar-bundles</artifactId>
-        <version>1.13.0</version>
+        <version>1.14.0</version>
     </parent>
 
     <artifactId>nifi-keycloak-bundle</artifactId>
     <packaging>pom</packaging>
     <description>NiFi: Keycloak Bundle</description>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.14.0</version>
 
     <properties>
         <keycloak.version>15.0.0</keycloak.version>
