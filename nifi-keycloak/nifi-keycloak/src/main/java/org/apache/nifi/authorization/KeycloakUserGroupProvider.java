@@ -152,9 +152,11 @@ public class KeycloakUserGroupProvider implements UserGroupProvider {
     private void load() {
 
         KeycloakApiClient client = new KeycloakApiClient(keycloakConfig);
-        var userList = client.getUsers();
-        var groupList = client.getGroups();
-
+        Set<User> userList = client.getUsers();
+        Set<Group> groupList = client.getGroups();
+        System.out.println("KeycloakUserGroupProvider - load()");
+        System.out.println(userList.toString());
+        System.out.println(groupList.toString());
         tenants.set(new TenantHolder(new HashSet<>(userList), new HashSet<>(groupList)));
     }
 

@@ -62,7 +62,7 @@ public class KeycloakApiClient {
     private User map(UserRepresentation kcUser) {
         return new User.Builder()
                 .identifier(kcUser.getId())
-                .identity(kcUser.getUsername())
+                .identity(kcUser.getEmail())
                 .build();
     }
 

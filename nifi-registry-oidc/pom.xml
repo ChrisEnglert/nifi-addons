@@ -13,7 +13,10 @@
     <packaging>pom</packaging>
 
     <properties>
-        <nifi-registry.version>0.8.0</nifi-registry.version>
+        <keycloak.version>15.0.0</keycloak.version>
+        <nifi.version>1.14.0</nifi.version>
+        <nifi.groovy.version>2.5.6</nifi.groovy.version>
+        <nifi-registry.version>1.14.0</nifi-registry.version>
     </properties>
 
     <modules>

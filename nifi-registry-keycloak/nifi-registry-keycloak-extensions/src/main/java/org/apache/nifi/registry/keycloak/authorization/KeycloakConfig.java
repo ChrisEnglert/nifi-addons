@@ -2,32 +2,29 @@ package org.apache.nifi.registry.keycloak.authorization;
 
 import org.apache.nifi.registry.security.authorization.AuthorizerConfigurationContext;
 import org.keycloak.admin.client.KeycloakBuilder;
+import org.keycloak.OAuth2Constants;
 
 public class KeycloakConfig {
 
     public static final String PROP_SERVER_URL = "ServerUrl";
     public static final String PROP_REALM = "Realm";
-    public static final String PROP_USERNAME = "Username";
-    public static final String PROP_PASSWORD = "Password";
     public static final String PROP_CLIENT_ID = "ClientID";
+    public static final String PROP_CLIENT_SECRET = "ClientSecret";
 
     private final String server;
     private final String realm;
     private final String clientId;
-    private final String username;
-    private final String password;
+    private final String clientSecret;
 
     private KeycloakConfig(String server,
                            String realm,
                            String clientId,
-                           String username,
-                           String password) {
+                           String clientSecret) {
 
         this.server = server;
         this.realm = realm;
         this.clientId = clientId;
-        this.username = username;
-        this.password = password;
+        this.clientSecret = clientSecret;
     }
 
     public static KeycloakConfig from(AuthorizerConfigurationContext context) {
@@ -36,8 +33,7 @@ public class KeycloakConfig {
             getOrDefault(context, PROP_SERVER_URL, "http://localhost:3000/auth"),
             getOrDefault(context, PROP_REALM, "master"),
             getOrDefault(context, PROP_CLIENT_ID, "admin-cli"),
-            getOrDefault(context, PROP_USERNAME, "admin"),
-            getOrDefault(context, PROP_PASSWORD, "admin")
+            getOrDefault(context, PROP_CLIENT_SECRET, "admin")
         );
     }
 
@@ -62,8 +58,8 @@ public class KeycloakConfig {
     public KeycloakBuilder apply(KeycloakBuilder builder) {
         return builder.serverUrl(server)
             .realm(realm)
-            .username(username)
-            .password(password)
+            .grantType(OAuth2Constants.CLIENT_CREDENTIALS)
+            .clientSecret(clientSecret)
             .clientId(clientId);
     }
 }

@@ -26,8 +26,9 @@
     <version>0.0.1-SNAPSHOT</version>
 
     <properties>
-        <keycloak.version>12.0.4</keycloak.version>
-        <nifi.version>1.13.0</nifi.version>
+        <keycloak.version>15.0.0</keycloak.version>
+        <nifi.version>1.14.0</nifi.version>
+        <nifi.groovy.version>2.5.6</nifi.groovy.version>
     </properties>
 
     <modules>

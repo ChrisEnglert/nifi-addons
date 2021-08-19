@@ -41,16 +41,16 @@ public class KeycloakTests {
         kcUserGroupProvider.onConfigured(configurationContext);
 
 
-        var userByIdentifier = kcUserGroupProvider.getUser("84a423b7-5e14-4a99-b7f8-c790e7e31cbe");
+        User userByIdentifier = kcUserGroupProvider.getUser("84a423b7-5e14-4a99-b7f8-c790e7e31cbe");
         Assert.assertEquals("chris", userByIdentifier.getIdentity());
 
-        var userByIdentity = kcUserGroupProvider.getUserByIdentity("chris");
+        User userByIdentity = kcUserGroupProvider.getUserByIdentity("chris");
         Assert.assertEquals("chris", userByIdentity.getIdentity());
 
-        var groupByIdentifier = kcUserGroupProvider.getGroup("8d7ab8e9-073c-4e04-b8ce-8a7b8503ae4f");
+        Group groupByIdentifier = kcUserGroupProvider.getGroup("8d7ab8e9-073c-4e04-b8ce-8a7b8503ae4f");
         Assert.assertEquals("nifi-devs", groupByIdentifier.getName());
 
-        var res = kcUserGroupProvider.getUserAndGroups("chris");
+        UserAndGroups res = kcUserGroupProvider.getUserAndGroups("chris");
         Assert.assertNotNull(res.getGroups());
         Assert.assertFalse(res.getGroups().isEmpty());
     }
