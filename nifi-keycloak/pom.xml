@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <!--
       Licensed to the Apache Software Foundation (ASF) under one or more
       contributor license agreements.  See the NOTICE file distributed with
@@ -14,20 +15,22 @@
       limitations under the License.
     -->
     <modelVersion>4.0.0</modelVersion>
-    <parent>
-        <groupId>org.apache.nifi</groupId>
-        <artifactId>nifi-nar-bundles</artifactId>
-        <version>1.13.0</version>
-    </parent>
 
     <artifactId>nifi-keycloak-bundle</artifactId>
     <packaging>pom</packaging>
     <description>NiFi: Keycloak Bundle</description>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.19.1</version>
+
+    <parent>
+        <groupId>org.apache.nifi</groupId>
+        <artifactId>nifi-nar-bundles</artifactId>
+        <version>1.19.1</version>
+        <relativePath></relativePath>
+    </parent>
 
     <properties>
-        <keycloak.version>12.0.4</keycloak.version>
-        <nifi.version>1.13.0</nifi.version>
+        <keycloak.version>19.0.3</keycloak.version>
+        <nifi.version>1.19.1</nifi.version>
     </properties>
 
     <modules>
@@ -40,7 +43,7 @@
             <dependency>
                 <groupId>org.apache.nifi</groupId>
                 <artifactId>nifi-keycloak</artifactId>
-                <version>${version}</version>
+                <version>${project.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
