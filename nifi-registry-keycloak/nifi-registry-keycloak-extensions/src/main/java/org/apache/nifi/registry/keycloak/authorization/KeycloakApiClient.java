@@ -1,5 +1,6 @@
 package org.apache.nifi.registry.keycloak.authorization;
 
+
 import org.apache.nifi.registry.security.authorization.Group;
 import org.apache.nifi.registry.security.authorization.User;
 import org.jboss.resteasy.client.jaxrs.ResteasyClientBuilder;
@@ -11,6 +12,7 @@ import org.keycloak.representations.idm.UserRepresentation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.ws.rs.client.Client;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -24,9 +26,9 @@ public class KeycloakApiClient {
 
     public KeycloakApiClient(KeycloakConfig config) {
         this.config = config;
-
+        final Client client = ResteasyClientBuilder.newBuilder().build();
         this.keycloak = config.keycloakBuilder()
-                .resteasyClient(new ResteasyClientBuilder().connectionPoolSize(2).build())
+                .resteasyClient(client)
                 .build();
     }
 

@@ -10,11 +10,29 @@
 
     <packaging>pom</packaging>
 
+    <properties>
+        <nifi.version>1.19.1</nifi.version>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>central</id>
+            <name>Central Repository</name>
+            <url>https://repo.maven.apache.org/maven2</url>
+            <layout>default</layout>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
     <modules>
         <module>nifi-keycloak</module>
         <module>nifi-tusio</module>
 
         <module>nifi-registry-oidc</module>
         <module>nifi-registry-keycloak</module>
+
+        <module>nifi-opentelemetry-bundle</module>
     </modules>
 </project>
